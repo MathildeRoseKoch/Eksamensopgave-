@@ -1,32 +1,38 @@
 // opstiller variable for hver sign up form og giver dem et kalde navn 
+var name1 = document.getElementById('name1');
+var pw = document.getElementById('pw');
+var email = document.getElementById("email");
+var birthday = document.getElementById("birthday");
+var genderFemale = document.getElementById("female");
+var genderMale = document.getElementById("male");
+var genderOther = document.getElementById("other");
+var interestFemale = document.getElementById("female");
+var interestMale = document.getElementById("male");
+var interestOther = document.getElementById("other");
 
-var firstname = document.getElementById('firstname');
-var lastname = document.getElementById('lastname');
-var password = document.getElementById('password');
-var email = document.getElementById("email")
-var birthday = document.getElementById("birthday")
-var genderFemale = document.getElementById("female")
-var genderMale = document.getElementById("male")
-var genderOther = document.getElementById("other")
-var interestFemale = document.getElementById("female")
-var interestMale = document.getElementById("male")
-var interestOther = document.getElementById("other")
+var gender = null;
+
+if (document.getElementById("male").checked) {
+  gender = document.getElementById("male").value;
+}
+if (document.getElementById("female").checked) {
+  gender = document.getElementById("female").value;
+}
+if (document.getElementById("other").checked) {
+  gender = document.getElementById("other").value;
+}
 
 // kalder localstorage og bruger set funktionen til at sætte keyword til den value
 function store() {
-    localStorage.setItem('fullname', firstname.value);
-    localStorage.setItem("lastname", lastname.value)
-    localStorage.setItem('password', password.value);
-    localStorage.setItem("email", email.value)
-    localStorage.setItem("birthday", birthday.value)
-    localStorage.setItem("gender", genderFemale.value)
-    localStorage.setItem("gender", genderMale.value)
-    localStorage.setItem("gender", genderOther. value)
-    localStorage.setItem("interest", genderFemale1.value)
-    localStorage.setItem("interest", genderMale1.value)
-    localStorage.setItem("interest", genderOther1.value)
+    localStorage.setItem('fullname', name1.value);
+    localStorage.setItem('pw', pw.value);
+    localStorage.setItem("email", email.value);
+    localStorage.setItem("birthday", birthday.value);
+    localStorage.setItem("gender", gender);
+    localStorage.setItem("interest", interestFemale1.value);
+    localStorage.setItem("interest", interestMale1.value);
+    localStorage.setItem("interest", interestOther1.value);
 }
-
 
 // check if stored data from register-form is equal to entered data in the   login-form
 function check() {
