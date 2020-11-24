@@ -35,7 +35,7 @@ if (document.getElementById("Female").checked) {
 if (document.getElementById("Other").checked) {
   interest = document.getElementById("Other").value;
 }
-    localStorage.setItem('fullname', name1.value);
+    localStorage.setItem('name1', name1.value);
     localStorage.setItem('pw', pw.value);
     localStorage.setItem("email", email.value);
     localStorage.setItem("birthday", birthday.value);
@@ -47,17 +47,18 @@ if (document.getElementById("Other").checked) {
 function check() {
 
     // stored data from the register-form
-    var storedName = localStorage.getItem('name1');
-    var storedPw = localStorage.getItem('pw');
+    var storedEmail = localStorage.getItem('email');
+    var storedPw = localStorage.getItem("pw")
 
     // entered data from the login-form
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
+    var userEmail = document.getElementById('useremail');
+    var userPw = document.getElementById('userpw');
 
     // check if stored data from register-form is equal to data from login form
-    if(userName.value == storedName && userPw.value == storedPw) {
+    if(userEmail.value == storedEmail && userPw.value == storedPw) {
         alert('You are loged in.');
     }else {
         alert('ERROR.');
     }
-}
+    
+  }
