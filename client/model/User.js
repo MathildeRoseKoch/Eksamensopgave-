@@ -8,6 +8,7 @@ class User {
     this.interest = interest;
     this.email = email;
     this.password = password;
+    this.interest = interest
     
     }
 }
